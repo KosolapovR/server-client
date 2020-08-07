@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - /usr/src/app/node_modules
+      - ./web:/usr/src/app
+    ports:
+      - '3000:3000'
+    restart: on-failure
+    container_name: web-app
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3001'
+    restart: on-failure
+    container_name: to-do-api
+    volumes:
+      - /usr/src/app/node_modules 
+      - ./server:/usr/src/app
