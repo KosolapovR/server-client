@@ -5,6 +5,7 @@ import useGetTodoList from "./hooks/useGetTodoList";
 
 export default function App() {
   const todoList = useGetTodoList();
+
   const addToDo = val => {
     if (val) console.log(val);
   };

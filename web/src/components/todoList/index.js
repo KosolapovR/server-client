@@ -5,9 +5,9 @@ import { Todo } from "../todo";
 export function TodoList(props) {
   return (
     <StyledTodoList>
-      {props.todoList &&
+      {props.todoList.length &&
         props.todoList.map((todo, i) => (
-          <Todo key={i} todo={{ name: todo, index: i }} />
+          <Todo key={i} todo={ todo } />
         ))}
     </StyledTodoList>
   );

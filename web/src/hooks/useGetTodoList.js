@@ -5,7 +5,7 @@ export default function() {
   const [todoList, setTodoList] = useState([]);
   useEffect(() => {
     fetchTodoList().then(data => {
-      setTodoList(data);
+      setTodoList([...todoList, ...data]);
     });
   }, []);
 
